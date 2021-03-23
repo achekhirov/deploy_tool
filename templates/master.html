@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+Master Chart
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    Master Chart data:<br>
+    <form method="post">
+        <div class="alert alert-info">
+            <p>{{ mpp.version }}</p>
+        </div>
+        <textarea name="master_version" id="master_version" class="form-control">{{ mpp.version }}</textarea><br>
+        <textarea name="desc" id="desc" class="form-control">Description</textarea><br>
+        <input type="submit" class="btn btn-info" name="update" value="Update">
+        <input type="submit" class="btn btn-success" name="push" value="Push to HUMANS">
+    </form>
+</div>
+<div class="container mt-5 alert-info">
+<p><b>Components to be updated:</b></p>
+{% for i in change_log %}
+<p>{{ i[0] }} {{ i[1] }}</p>
+{% endfor %}
+</div>
+{% for component in mpp.master_components_version %}
+<div class="container mt-5 alert alert-info">
+     <b>{{component[0]}}</b> {{component[1]}}
+</div>
+{% endfor %}
+{% endblock %}

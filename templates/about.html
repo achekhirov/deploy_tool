@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}
+Chart Versions
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+<h3>Current helms:</h3>
+
+<div class="alert alert-info">
+    <b>{{ mpp.name }}</b> {{ mpp.version }}<br>
+    <div class="float-right"><a href="/versions/master" class="btn btn-info">Update master chart</a></div><br>
+</div>
+
+<div class="alert alert-info">
+    <b>{{ api.name }}</b><br>
+    Chart version: {{ api.version }}<br>
+    Tag: {{api.tag}}
+    <div class="float-right"><a href="/versions/{{api.name}}" class="btn btn-info">Update component</a></div><br>
+</div>
+
+<div class="alert alert-info">
+    <b>{{ cp.name }}</b><br>
+    Chart version: {{ cp.version }}<br>
+    Tag: {{cp.tag}}
+    <div class="float-right"><a href="/versions/{{cp.name}}" class="btn btn-info">Update component</a></div><br>
+</div>
+
+<div class="alert alert-info">
+    <b>{{ processing.name }}</b> <br>
+    Chart version: {{ processing.version }}<br>
+    Tag: {{processing.tag}}
+    <div class="float-right"><a href="/versions/{{processing.name}}" class="btn btn-info">Update component</a></div><br>
+</div>
+
+<div class="alert alert-info">
+    <b>{{ stream.name }}</b><br>
+    Chart version: {{ stream.version }}<br>
+    Tag: {{stream.tag}}
+    <div class="float-right"><a href="/versions/{{stream.name}}" class="btn btn-info">Update component</a></div><br>
+</div>
+
+<div class="alert alert-info">
+    <b>{{ db.name }}</b><br>
+    Chart version: {{ db.version }}<br>
+    Migration: {{db.migration}}
+    <div class="float-right"><a href="/versions/{{db.name}}" class="btn btn-info">Update component</a></div><br>
+</div>
+
+<form method="POST">
+<input type="submit" class="btn btn-success" value="Populate">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+DB Details
+{% endblock %}
+{% block body %}
+
+<div class="container mt-5">
+    {{ component.name }}<br>
+    <form method="post">
+        <div class="alert alert-info">
+            <p>Current {{ component.name }} version: {{ component.version }}</p>
+            <p>Current {{ component.name }} image tag: {{ component.migration }}</p>
+            <p>Current {{ component.name }} ci tag: {{ component.ci }}</p>
+        </div>
+       Version: <textarea name="new_version" id="version" class="form-control">{{ component.version }}</textarea><br>
+       Tag: <textarea name="new_tag" id="tag" class="form-control">{{ component.migration }}</textarea><br>
+        <input type="submit" class="btn btn-info" value="Update">
+        <a href="/build/{{ component.name }}" class="btn btn-info">Go to Sync Migrations</a><br>
+        
+    </form>
+</div>
+{% endblock %}

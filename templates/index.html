@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}
+Deploy tool
+{% endblock %}
+
+{% block body %}
+
+<div class="list-group container">
+    <p><h5>Select component to begin:</h5></p>
+    <a href="/versions/offers-api" class="list-group-item list-group-item-action">Offers API</a>
+    <a href="/versions/control-panel" class="list-group-item list-group-item-action">Control Panel</a>
+    <a href="/versions/processing" class="list-group-item list-group-item-action">Processing</a>
+    <a href="/versions/stream-static" class="list-group-item list-group-item-action">Stream</a>
+    <a href="/versions/mysql" class="list-group-item list-group-item-action">MySQL</a>
+  </div>
+{% endblock %}

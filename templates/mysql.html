@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}
+DB Build
+{% endblock%}
+
+{% block body %}
+<div class="container mt-5 alert-info"> <p>Component <b><h5>MySQL</h5></b></p>
+<br>
+<p>Migrations:</p> 
+    {{ status }}<br>
+<form method="post">
+    <input type="submit" class="btn btn-info" name="pull" value="Pull component">
+    <input type="submit" class="btn btn-info" name="sync" value="Sync folders">
+    <input type="submit" class="btn btn-info" name="push" value="Push migrations">
+</form>
+</div>
+{% endblock%}
